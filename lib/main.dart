@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flamingo_ebook/constants.dart';
+import 'package:flamingo_ebook/screens/welcome_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,14 +13,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+        scaffoldBackgroundColor: Colors.black,
+        textTheme: Theme.of(context).textTheme.apply(displayColor: kBlackColor),
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello world!'),
-        ),
-      ),
+      home: WelcomeScreen(),
     );
   }
 }
