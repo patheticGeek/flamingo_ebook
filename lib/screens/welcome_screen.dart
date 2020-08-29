@@ -1,3 +1,4 @@
+import 'package:flamingo_ebook/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flamingo_ebook/widgets/rounded_button.dart';
 
@@ -34,7 +35,12 @@ class WelcomeScreen extends StatelessWidget {
               width: MediaQuery.of(context).size.width * 0.6,
               child: RoundedButton(
                 text: 'start reading',
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (ctx) => HomeScreen()),
+                  );
+                },
                 fontSize: 20,
               ),
             ),
