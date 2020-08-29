@@ -1,10 +1,18 @@
 import 'package:flamingo_ebook/constants.dart';
+import 'package:flamingo_ebook/screens/details_screen.dart';
 import 'package:flamingo_ebook/widgets/book_rating.dart';
 import 'package:flamingo_ebook/widgets/reading_list_card.dart';
 import 'package:flamingo_ebook/widgets/two_sides_rounded_button.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
+  void detailsPage(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (ctx) => DetailsScreen()),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -49,7 +57,7 @@ class HomeScreen extends StatelessWidget {
                       title: 'Crushing & Influence',
                       author: 'Gary Venchuk',
                       rating: 4.9,
-                      onPressedDetails: () {},
+                      onPressedDetails: () => detailsPage(context),
                       onPressedRead: () {},
                     ),
                     ReadingListCard(
@@ -57,7 +65,7 @@ class HomeScreen extends StatelessWidget {
                       title: 'Top Ten Bussinesss Hacks',
                       author: 'Herman Joel',
                       rating: 4.8,
-                      onPressedDetails: () {},
+                      onPressedDetails: () => detailsPage(context),
                       onPressedRead: () {},
                     ),
                     SizedBox(width: 30),
